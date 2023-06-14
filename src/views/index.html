@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/index.scss" />
 
-  <title>Candidate Exercise</title>
-</head>
+    <title>Candidate Exercise</title>
+  </head>
 
-<body>
-  <div class="exercise-header">
-    <h2>Exercise 1 - Testimonial Block</h2>
-  </div>
+  <body>
+    <div class="exercise-header">
+      <h2>Exercise 1 - Testimonial Block</h2>
+    </div>
 
-  <div>
     <div>
       <div>
-        <p>Gingerbread tart cupcake cake muffin cookie liquorice tiramisu. Toffee cupcake cake cake croissant icing carrot cake cookie. Dessert chocolate bar apple pie sesame snaps liquorice carrot cake cookie danish.</p>
-        <span>Indiana Jones, Archaeologist</span>
+        <div>
+          <p>
+            Gingerbread tart cupcake cake muffin cookie liquorice tiramisu.
+            Toffee cupcake cake cake croissant icing carrot cake cookie. Dessert
+            chocolate bar apple pie sesame snaps liquorice carrot cake cookie
+            danish.
+          </p>
+          <span>Indiana Jones, Archaeologist</span>
+        </div>
+        <a>Tell Me More</a>
       </div>
-      <a>Tell Me More</a>
     </div>
-  </div>
 
-  <div class="exercise-header">
-    <h2>Exercise 2 - Filterable Content</h2>
-  </div>
+    <div class="exercise-header">
+      <h2>Exercise 2 - Filterable Content</h2>
+    </div>
 
-  <div>[Exercise 2 Here]</div>
+    <div id="filters">
+      <input type="radio" name="type" value="movie" id="movie" />
+      <label for="movie">Movies</label>
+      <input type="radio" name="type" value="book" id="book" />
+      <label for="book">Books</label>
+      <div class="dropdown">
+        <button class="dropbtn" id="genre-btn">Genre</button>
+        <div class="dropdown-content" id="genre">
+          <!-- Checkboxes will be populated here -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" id="year-btn">Year</button>
+        <div class="dropdown-content" id="year">
+          <!-- Checkboxes will be populated here -->
+        </div>
+      </div>
+      <button id="clear">CLEAR FILTERS</button>
+    </div>
+    <input type="text" id="search" placeholder="Search by title" />
+    <div id="content">
+      <!-- Content goes here -->
+    </div>
+  </body>
 
-</body>
-
-<footer>
-  <script type="module" src="../js/index.js"></script>
-</footer>
+  <footer>
+    <script type="module" src="../js/index.js"></script>
+  </footer>
 </html>

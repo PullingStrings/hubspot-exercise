@@ -1,0 +1,48 @@
+/* style.css */
+
+@media (max-width: 600px) {
+ #filters {
+  display: flex;
+  flex-direction: column;
+ }
+}
+
+#filters {
+ display: flex;
+ justify-content: space-around;
+ padding: 10px;
+}
+
+#content {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+#content .item {
+ border: 1px solid #000;
+ margin: 10px;
+ padding: 10px;
+}
+
+.dropdown {
+ position: relative;
+ display: inline-block;
+}
+
+.dropdown-content {
+ display: none;
+ position: absolute;
+ min-width: 160px;
+ z-index: 1;
+ overflow: auto;
+}
+
+.dropdown-content label {
+ display: block;
+}
+
+.dropdown:hover .dropdown-content {
+ display: block;
+ background-color: grey;
+}
