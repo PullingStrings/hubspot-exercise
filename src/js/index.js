@@ -67,6 +67,8 @@ function populateFilters(data) {
     const yearContainer = document.querySelector('#year');
 
     genres.forEach(genre => {
+        const container = document.createElement('div');
+        container.classList.add('filter-container');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = genre;
@@ -75,13 +77,19 @@ function populateFilters(data) {
         const label = document.createElement('label');
         label.htmlFor = genre;
         label.textContent = genre;
-        genreContainer.appendChild(checkbox);
-        genreContainer.appendChild(label);
+        // genreContainer.appendChild(checkbox);
+        // genreContainer.appendChild(label);
+        container.appendChild(checkbox);
+        container.appendChild(label);
+        genreContainer.appendChild(container);
+
     });
 
     years = new Set(Array.from(years).sort());
 
     years.forEach(year => {
+        const container = document.createElement('div');
+        container.classList.add('filter-container');
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = year;
@@ -90,9 +98,25 @@ function populateFilters(data) {
         const label = document.createElement('label');
         label.htmlFor = year;
         label.textContent = year;
-        yearContainer.appendChild(checkbox);
-        yearContainer.appendChild(label);
+        // yearContainer.appendChild(checkbox);
+        // yearContainer.appendChild(label);
+        container.appendChild(checkbox);
+        container.appendChild(label);
+        yearContainer.appendChild(container);
     });
+    const yearContent = document.querySelector('#year');
+    const genreContent = document.querySelector('#genre');
+
+    document.querySelector('#genre-btn').addEventListener('click', () => {
+       genreContent.style.display = genreContent.style.display === 'block' ? 'none' : 'block';
+        yearContent.style.display = "none";
+   });
+
+   document.querySelector('#year-btn').addEventListener('click', () => {
+       yearContent.style.display = yearContent.style.display === 'block' ? 'none' : 'block';
+       genreContent.style.display = "none";
+   });
+
 }
 
 document.querySelector('#clear').addEventListener('click', () => {
