@@ -7,96 +7,161 @@
  }
 }
 
+.main-media-container {
+ display: flex;
+ flex-direction: column;
+ border: 1px solid #c2c2c2;
+ max-width: 1440px;
+ margin: 0 auto;
+ width: 100%;
+}
+
 #filters {
  display: flex;
  justify-content: space-between;
  padding: 10px;
+ border-bottom: 1px solid #c2c2c2;
 }
 
 .filters_container {
  display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ width: 100%;
+
+ @media screen and (max-width: 420px) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+}
+
+.year_genre_dropdrown_container {
+ display: flex;
  flex-direction: column;
+ width: 50%;
+  @media screen and (max-width: 420px) {
+    width: 100%;
+   }
 }
 
-.search_clear_container {
+.btn-dropdown {
  display: flex;
- flex-direction: column-reverse;
- position: relative;
-  #clear {
-   background: none;
-    border: none;
-    padding: 10px;
-    color: #00a5bd;
-    text-decoration: underline;
-    font-weight: bold;
-  }
-  #search {
-    padding: 10px;
-    border-radius: 3px;
-    border: 1px solid #eee;
-  }
-  #search::after {
-   content: "";
-   position: absolute;
-   top: 50%;
-   right: 10px;
-   /* Adjust this value to position the icon */
-   transform: translateY(-50%);
-   width: 20px;
-   height: 20px;
-   cursor: pointer;
-  }
-  #search::after {
-   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333333'%3E%3Cpath d='M15.5 14h-.8l-.3-.3C16.2 11.8 17 9.5 17 7c0-4.4-3.6-8-8-8S1 2.6 1 7s3.6 8 8 8c2.5 0 4.8-.8 6.7-2.1l.3.3v.8l5 5 1.5-1.5-5-5zm-8 0C7.9 14 5 11.1 5 7S7.9 0 12 0s7 2.9 7 7-2.9 7-7 7z'/%3E%3C/svg%3E");
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
-
-#content {
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
-}
-
-#content .item {
- border: 1px solid #000;
- margin: 10px;
- padding: 10px;
 }
 
 .dropdown {
  position: relative;
  display: inline-block;
-  .dropbtn {
-   background-color: #eee;
-   border-bottom: 3px solid grey;
-   padding: 10px 20px;
-   text-transform: uppercase;
-   margin: 20px 0px;
-   color: grey;
-   font-weight: bold;
-   border-right: none;
-   border-top: none;
-   border-left: none;
+ width: 35%;
+ margin: 3px;
+ @media screen and (max-width: 420px) {
+   width: 50%;
   }
+
+ .dropbtn {
+  background-color: #eee;
+  border-bottom: 3px solid grey;
+  padding: 10px 30px 20px 5px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  color: grey;
+  font-weight: bold;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  cursor: pointer;
+  width: 100%;
+ }
+
+ .dropbtn:focus-visible {
+  outline: none;
+ }
+
+ .dropbtn::after {
+  content: '\002304';
+  font-size: 25px;
+  position: absolute;
+  top: 16px;
+  right: 5px;
+ }
 }
 
 .dropdown-content {
  display: none;
- // display: block;
  position: absolute;
  min-width: 200px;
  z-index: 1;
  overflow: auto;
  background-color: #fff;
- border: 1px solid grey;
+ border: 1px solid #c2c2c2;
+ overflow: auto;
+ height: 50vh;
 
-  .filter-container {
-   display: flex;
-   border-bottom: 1px solid grey;
-   padding: 20px 5px;
-  }
+ .filter-container {
+  display: flex;
+  border-bottom: 1px solid #c2c2c2;
+  padding: 20px 5px;
+ }
+
+ .filter-container:hover {
+  background-color: #80808036;
+  cursor: pointer;
+ }
+
+ /* Hide the default checkbox */
+ input[type="checkbox"] {
+  display: none;
+ }
+
+ /* Style the label to create a custom checkbox */
+ label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+ }
+
+ /* Create the checkbox shape */
+ label:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #fff;
+ }
+
+ /* Style the checkbox when checked */
+ input[type="checkbox"]:checked+label:before {
+  background-color: #fff;
+  /* Change this to the desired color */
+ }
+
+ /* Create a checkmark inside the checkbox */
+ label:after {
+  content: "\2714";
+  display: none;
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: grey;
+ }
+
+ /* Show the checkmark when checkbox is checked */
+ input[type="checkbox"]:checked+label:after {
+  display: block;
+ }
+}
+
+
+#year.dropdown-content {
+ min-width: 100px;
 }
 
 .dropdown-content label {
@@ -106,6 +171,91 @@
  font-weight: bold;
 }
 
-// .dropdown:hover .dropdown-content {
-//  display: block;
-// }
+.movies_books_container {
+ padding-top: 20px;
+ label {
+  font-weight: bold;
+ }
+  @media screen and (max-width: 420px) {
+   text-align: center;
+   padding-bottom: 20px;
+  }
+}
+
+.search_clear_container {
+ display: flex;
+ flex-direction: column-reverse;
+ position: relative;
+ align-items: flex-end;
+ cursor: pointer;
+ justify-content: space-between;
+  #clear {
+   background: none;
+    border: none;
+    padding: 10px;
+    color: #00a5bd;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #search {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    position: relative;
+    cursor: pointer;
+  }
+  &::after {
+    content: '\1F50D';
+     display: inline-block;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 10px;
+     left: 130px;
+     }
+
+    @media screen and (max-width: 420px) {
+     align-items: center;
+    }
+  }
+
+
+#content {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+
+.media_item_content {
+ display: flex;
+ font-weight: bold;
+ padding: 5px;
+ flex-direction: column;
+
+ .image-container {
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+   @media screen and (max-width: 420px) {
+     width: 100%;
+    }
+
+   img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+    }
+ }
+
+ .info-container {
+  p {
+   font-size: 10px;
+
+  }
+ }
+ h2 {
+  font-size: 18px
+ }
+
+}

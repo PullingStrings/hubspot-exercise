@@ -42,38 +42,41 @@
       <h2>Exercise 2 - Filterable Content</h2>
     </div>
 
-    <div id="filters">
-      <div class="filters_container">
-        <div class="year_genre_dropdrown_container">
-          <div class="dropdown">
-            <button class="dropbtn" id="genre-btn">Genre</button>
-            <div class="dropdown-content" id="genre">
-              <!-- Checkboxes will be populated here -->
+    <div class="main-media-container">
+      <div id="filters">
+        <div class="filters_container">
+          <div class="year_genre_dropdrown_container">
+            <div class="btn-dropdown">
+              <div class="dropdown">
+                <button class="dropbtn" id="genre-btn">Genre</button>
+                <div class="dropdown-content" id="genre">
+                  <!-- Checkboxes will be populated here -->
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn" id="year-btn">Year</button>
+                <div class="dropdown-content" id="year">
+                  <!-- Checkboxes will be populated here -->
+                </div>
+              </div>
+            </div>
+            <div class="movies_books_container">
+              <input type="radio" name="type" value="movie" id="movie" />
+              <label for="movie">Movies</label>
+              <input type="radio" name="type" value="book" id="book" />
+              <label for="book">Books</label>
             </div>
           </div>
-          <div class="dropdown">
-            <button class="dropbtn" id="year-btn">Year</button>
-            <div class="dropdown-content" id="year">
-              <!-- Checkboxes will be populated here -->
-            </div>
+
+          <div class="search_clear_container">
+            <button id="clear">CLEAR FILTERS</button>
+            <input type="text" id="search" placeholder="Search by title" />
           </div>
         </div>
-
-        <div class="movies_books_container">
-          <input type="radio" name="type" value="movie" id="movie" />
-          <label for="movie">Movies</label>
-          <input type="radio" name="type" value="book" id="book" />
-          <label for="book">Books</label>
-        </div>
       </div>
-
-      <div class="search_clear_container">
-        <button id="clear">CLEAR FILTERS</button>
-        <input type="text" id="search" placeholder="Search by title" />
+      <div id="content">
+        <!-- Content goes here -->
       </div>
-    </div>
-    <div id="content">
-      <!-- Content goes here -->
     </div>
   </body>
 

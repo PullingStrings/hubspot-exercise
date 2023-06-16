@@ -1,5 +1,7 @@
 @import "/src/styles/moviesStyling";
 
+
+
 .exercise-header {
   padding: 1rem 0;
   margin: 2rem 0;
@@ -11,6 +13,8 @@
 body {
   margin: 0;
   font-family: 'Roboto', 'Montserrat', sans-serif;
+  max-width: 1440px;
+  width: 100%;
 }
 
 body > div:nth-child(2) {
